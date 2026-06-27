@@ -77,35 +77,12 @@
       }
 
       .brand-mark {
-        position: relative;
         width: 42px;
         height: 42px;
-        border: 1px solid rgba(45, 230, 176, 0.72);
-        border-radius: 50%;
-        background: rgba(45, 230, 176, 0.08);
-        box-shadow: 0 0 38px rgba(45, 230, 176, 0.18);
-      }
-
-      .brand-mark::before,
-      .brand-mark::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 5px;
-        height: 20px;
-        border-radius: 999px;
-        background: linear-gradient(180deg, #65ffd5, #24d6a3);
-        transform: translate(-50%, -50%);
-      }
-
-      .brand-mark::before {
-        box-shadow: -10px 4px 0 -1px var(--accent), 10px -3px 0 1px var(--accent);
-      }
-
-      .brand-mark::after {
-        height: 28px;
-        transform: translate(-50%, -50%) translateX(10px);
+        display: block;
+        border-radius: 12px;
+        box-shadow: 0 0 38px rgba(45, 230, 176, 0.2);
+        object-fit: cover;
       }
 
       .wordmark {
@@ -428,7 +405,14 @@
     <main class="shell">
       <nav class="nav" aria-label="Page">
         <a class="brand" href="#top" aria-label="GenreKey Privacy Policy">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <img
+            class="brand-mark"
+            src="assets/genrekey-app-icon-512.png"
+            width="42"
+            height="42"
+            alt=""
+            aria-hidden="true"
+          />
           <span class="wordmark">GENREKEY</span>
         </a>
         <span class="nav-pill">Privacy Policy · Updated June 27, 2026</span>
