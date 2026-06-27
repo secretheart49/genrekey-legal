@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Privacy Policy for GenreKey, a music key and genre finder app."
+    />
+    <title>GenreKey Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0a0b12;
+        --page: #07080c;
+        --surface: rgba(255, 255, 255, 0.045);
+        --surface-strong: rgba(255, 255, 255, 0.075);
+        --line: rgba(242, 243, 247, 0.14);
+        --text: #f2f3f7;
+        --muted: rgba(242, 243, 247, 0.64);
+        --soft: rgba(242, 243, 247, 0.46);
+        --accent: #2de6b0;
+        --cyan: #46c7ff;
+        --pink: #ff4d8d;
+        --accent-dark: #04150f;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 82% 8%, rgba(255, 77, 141, 0.24), transparent 34rem),
+          radial-gradient(circle at 10% 82%, rgba(45, 230, 176, 0.2), transparent 28rem),
+          linear-gradient(180deg, var(--bg), var(--page));
+        color: var(--text);
+        font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        letter-spacing: 0;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 36px));
+        margin: 0 auto;
+        padding: 28px 0 54px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 0 34px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        position: relative;
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(45, 230, 176, 0.72);
+        border-radius: 50%;
+        background: rgba(45, 230, 176, 0.08);
+        box-shadow: 0 0 38px rgba(45, 230, 176, 0.18);
+      }
+
+      .brand-mark::before,
+      .brand-mark::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 5px;
+        height: 20px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, #65ffd5, #24d6a3);
+        transform: translate(-50%, -50%);
+      }
+
+      .brand-mark::before {
+        box-shadow: -10px 4px 0 -1px var(--accent), 10px -3px 0 1px var(--accent);
+      }
+
+      .brand-mark::after {
+        height: 28px;
+        transform: translate(-50%, -50%) translateX(10px);
+      }
+
+      .wordmark {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 3px;
+      }
+
+      .nav-pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.7px;
+        padding: 10px 13px;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.72fr);
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .hero-main,
+      .summary-card,
+      .policy-card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+        backdrop-filter: blur(16px);
+      }
+
+      .hero-main {
+        min-height: 390px;
+        padding: clamp(26px, 5vw, 52px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .hero-main::after {
+        content: "";
+        position: absolute;
+        inset: auto -8% -32% 42%;
+        height: 250px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(45, 230, 176, 0.24), transparent 68%);
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--soft);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 26px rgba(45, 230, 176, 0.9);
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 28px 0 18px;
+        font-size: clamp(42px, 8vw, 86px);
+        line-height: 0.93;
+        font-weight: 700;
+        letter-spacing: -1.5px;
+      }
+
+      .gradient-text {
+        background: linear-gradient(90deg, var(--accent), var(--cyan), var(--pink));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .lead {
+        max-width: 740px;
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(17px, 2.4vw, 22px);
+        line-height: 1.55;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 36px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .chip {
+        border: 1px solid rgba(45, 230, 176, 0.26);
+        border-radius: 999px;
+        background: rgba(45, 230, 176, 0.08);
+        color: rgba(242, 243, 247, 0.86);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 9px 11px;
+      }
+
+      .summary-card {
+        padding: 24px;
+      }
+
+      .summary-title {
+        color: var(--soft);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+      }
+
+      .summary-list {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .summary-list li {
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        gap: 11px;
+        align-items: start;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.45;
+      }
+
+      .check {
+        display: inline-grid;
+        place-items: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: var(--accent-dark);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 230px minmax(0, 1fr);
+        gap: 24px;
+        align-items: start;
+        margin-top: 24px;
+      }
+
+      .toc {
+        position: sticky;
+        top: 18px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.04);
+        padding: 14px;
+      }
+
+      .toc a {
+        display: block;
+        border-radius: 10px;
+        color: var(--muted);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        padding: 11px 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .toc a:hover {
+        background: rgba(45, 230, 176, 0.08);
+        color: var(--text);
+      }
+
+      .policy-card {
+        padding: clamp(22px, 4vw, 38px);
+      }
+
+      section + section {
+        border-top: 1px solid var(--line);
+        margin-top: 30px;
+        padding-top: 30px;
+      }
+
+      h2 {
+        margin: 0 0 14px;
+        color: var(--text);
+        font-size: clamp(24px, 3.5vw, 34px);
+        line-height: 1.12;
+        font-weight: 700;
+      }
+
+      p,
+      li {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.72;
+      }
+
+      p {
+        margin: 0 0 14px;
+      }
+
+      ul {
+        margin: 12px 0 0;
+        padding-left: 20px;
+      }
+
+      strong {
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .callout {
+        border: 1px solid rgba(45, 230, 176, 0.24);
+        border-radius: 14px;
+        background: rgba(45, 230, 176, 0.075);
+        margin-top: 18px;
+        padding: 16px;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        border-top: 1px solid var(--line);
+        color: var(--soft);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 1.2px;
+        margin-top: 30px;
+        padding-top: 24px;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 820px) {
+        .shell {
+          width: min(100% - 28px, 680px);
+          padding-top: 18px;
+        }
+
+        .nav {
+          align-items: flex-start;
+          padding-bottom: 22px;
+        }
+
+        .hero,
+        .content {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-main {
+          min-height: 430px;
+        }
+
+        .toc {
+          position: static;
+        }
+
+        .toc {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .footer {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .nav {
+          flex-direction: column;
+        }
+
+        .nav-pill {
+          white-space: normal;
+        }
+
+        .toc {
+          grid-template-columns: 1fr;
+        }
+
+        .chip {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <nav class="nav" aria-label="Page">
+        <a class="brand" href="#top" aria-label="GenreKey Privacy Policy">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="wordmark">GENREKEY</span>
+        </a>
+        <span class="nav-pill">Privacy Policy · Updated June 27, 2026</span>
+      </nav>
+
+      <header id="top" class="hero">
+        <div class="hero-main">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> Music key and genre finder</div>
+            <h1><span class="gradient-text">Privacy</span> Policy</h1>
+            <p class="lead">
+              GenreKey helps identify a track's genre, key, BPM, mood, and music
+              features from audio you choose to record or upload.
+            </p>
+          </div>
+          <div class="hero-meta" aria-label="Policy highlights">
+            <span class="chip">No account required</span>
+            <span class="chip">Audio only when you start it</span>
+            <span class="chip">No user-to-user sharing</span>
+          </div>
+        </div>
+
+        <aside class="summary-card" aria-label="Short privacy summary">
+          <div class="summary-title">Quick summary</div>
+          <ul class="summary-list">
+            <li><span class="check">✓</span><span>We use microphone or uploaded audio only to run music analysis.</span></li>
+            <li><span class="check">✓</span><span>Audio is sent to the GenreKey analysis API and is not intentionally stored after analysis.</span></li>
+            <li><span class="check">✓</span><span>Recent scan results may be saved locally on your device.</span></li>
+            <li><span class="check">✓</span><span>Public chart metadata may come from third-party music services; your audio is not sent to them by the app.</span></li>
+          </ul>
+        </aside>
+      </header>
+
+      <div class="content">
+        <aside class="toc" aria-label="Privacy sections">
+          <a href="#scope">Scope</a>
+          <a href="#data">Data We Collect</a>
+          <a href="#audio">Audio Processing</a>
+          <a href="#permissions">Permissions</a>
+          <a href="#sharing">Sharing</a>
+          <a href="#retention">Retention</a>
+          <a href="#choices">Your Choices</a>
+          <a href="#children">Children</a>
+          <a href="#contact">Contact</a>
+        </aside>
+
+        <article class="policy-card">
+          <section id="scope">
+            <h2>1. Scope</h2>
+            <p>
+              This Privacy Policy applies to the GenreKey mobile application for
+              Android and iOS, including the package name
+              <strong>com.songkeyfinder.app</strong>, and related GenreKey analysis
+              services.
+            </p>
+            <p>
+              By using GenreKey, you agree to the collection and use of information
+              described in this policy.
+            </p>
+          </section>
+
+          <section id="data">
+            <h2>2. Data We Collect</h2>
+            <p>GenreKey may process the following information:</p>
+            <ul>
+              <li>
+                <strong>Audio you provide:</strong> a live microphone sample when
+                you press and hold the listen control, or an audio file you select
+                for upload.
+              </li>
+              <li>
+                <strong>Analysis results:</strong> estimated genre, key, BPM,
+                mood, confidence, audio features, related genres, and reference
+                music metadata returned by the service.
+              </li>
+              <li>
+                <strong>Local app data:</strong> recent scan results stored on
+                your device so you can reopen them inside the app.
+              </li>
+              <li>
+                <strong>Technical service data:</strong> IP address, request time,
+                file size, processing status, error logs, and similar diagnostic
+                information used for security, abuse prevention, debugging, and
+                reliability.
+              </li>
+            </ul>
+            <div class="callout">
+              GenreKey does not require you to create an account and does not
+              provide chat, posting, or user-to-user content sharing features.
+            </div>
+          </section>
+
+          <section id="audio">
+            <h2>3. Audio Processing</h2>
+            <p>
+              GenreKey records or receives audio only when you actively use Live
+              Listen or upload a track. The app sends that audio to the GenreKey
+              analysis API to estimate music characteristics such as genre, key,
+              BPM, mood, and feature scores.
+            </p>
+            <p>
+              The GenreKey API processes audio for analysis and returns the result
+              to the app. GenreKey does not intentionally store uploaded or recorded
+              audio files after analysis is complete. Temporary files or technical
+              logs may exist for a limited time as part of normal service operation,
+              debugging, security, or abuse prevention.
+            </p>
+            <p>
+              The app may use third-party public music metadata or chart services,
+              including Last.fm, to show trending charts or reference metadata.
+              GenreKey does not send your uploaded or recorded audio to those
+              chart/metadata services.
+            </p>
+          </section>
+
+          <section id="permissions">
+            <h2>4. App Permissions</h2>
+            <ul>
+              <li>
+                <strong>Microphone:</strong> used only when you choose Live Listen
+                so the app can capture a short audio sample for analysis.
+              </li>
+              <li>
+                <strong>Files or media picker:</strong> used when you select an
+                audio file to upload for analysis.
+              </li>
+              <li>
+                <strong>Internet:</strong> used to send analysis requests, receive
+                results, fetch chart metadata, and check app configuration such as
+                update notices.
+              </li>
+            </ul>
+          </section>
+
+          <section id="sharing">
+            <h2>5. Sharing and Third Parties</h2>
+            <p>
+              GenreKey does not sell your personal data. We may share limited
+              information only when needed to operate the service, comply with law,
+              protect the app or API from abuse, or use infrastructure providers
+              that help host and secure the service.
+            </p>
+            <p>
+              Public chart or music metadata displayed in the app may be supplied
+              by third-party services. Their own privacy practices apply when their
+              services are contacted directly.
+            </p>
+          </section>
+
+          <section id="retention">
+            <h2>6. Retention</h2>
+            <p>
+              Audio files are processed transiently and are not intentionally kept
+              after analysis. Technical request logs may be retained for a limited
+              period for security, debugging, abuse prevention, and service
+              reliability.
+            </p>
+            <p>
+              Recent scan results stored on your device remain until you clear app
+              data, uninstall the app, or the app replaces them with newer recent
+              results.
+            </p>
+          </section>
+
+          <section id="choices">
+            <h2>7. Your Choices</h2>
+            <ul>
+              <li>You can deny microphone permission and use file upload instead.</li>
+              <li>You can avoid uploading any audio file you do not want analyzed.</li>
+              <li>You can remove local app data by clearing the app data or uninstalling the app.</li>
+              <li>You can contact us to request deletion or ask privacy questions.</li>
+            </ul>
+          </section>
+
+          <section id="security">
+            <h2>8. Security</h2>
+            <p>
+              We use reasonable technical and organizational safeguards to protect
+              the service. No internet-connected service can be guaranteed to be
+              completely secure, but we work to limit processing to what the app
+              needs and to keep operational access controlled.
+            </p>
+          </section>
+
+          <section id="children">
+            <h2>9. Children</h2>
+            <p>
+              GenreKey is not designed for children under 13. Do not upload audio
+              that you do not have the right to use.
+            </p>
+          </section>
+
+          <section id="changes">
+            <h2>10. Changes</h2>
+            <p>
+              We may update this Privacy Policy as GenreKey evolves. The updated
+              date at the top of this page will change when we publish a new
+              version.
+            </p>
+          </section>
+
+          <section id="contact">
+            <h2>11. Contact</h2>
+            <p>
+              For privacy questions, deletion requests, or policy concerns, contact:
+              <strong><a href="mailto:secretheart49@gmail.com">secretheart49@gmail.com</a></strong>.
+            </p>
+          </section>
+
+          <footer class="footer">
+            <span>GenreKey Privacy Policy</span>
+            <span>Effective June 27, 2026</span>
+          </footer>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
