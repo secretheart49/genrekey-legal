@@ -7,28 +7,36 @@
       name="description"
       content="Privacy Policy for SongKey, a song key and BPM finder app."
     />
+    <meta name="theme-color" content="#fc0fc0" />
     <title>SongKey Privacy Policy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="icon" type="image/png" href="assets/songkey-app-icon-512.png" />
     <style>
+      @font-face {
+        font-family: "Manrope";
+        src: url("assets/fonts/Manrope-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Manrope";
+        src: url("assets/fonts/Manrope-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Manrope";
+        src: url("assets/fonts/Manrope-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-display: swap;
+      }
+
+      /* The app's palette: neon green and shocking pink, with black ink for text and outlines. */
       :root {
-        color-scheme: dark;
-        --bg: #0a0b12;
-        --page: #07080c;
-        --surface: rgba(255, 255, 255, 0.045);
-        --surface-strong: rgba(255, 255, 255, 0.075);
-        --line: rgba(242, 243, 247, 0.14);
-        --text: #f2f3f7;
-        --muted: rgba(242, 243, 247, 0.64);
-        --soft: rgba(242, 243, 247, 0.46);
-        --accent: #2de6b0;
-        --cyan: #46c7ff;
-        --pink: #ff4d8d;
-        --accent-dark: #04150f;
+        color-scheme: light;
+        --pink: #fc0fc0;
+        --green: #42e425;
+        --ink: #0b0b0b;
+        --tint: rgba(11, 11, 11, 0.55);
       }
 
       * {
@@ -36,37 +44,51 @@
       }
 
       html {
+        background: var(--pink);
         scroll-behavior: smooth;
       }
 
       body {
         margin: 0;
-        min-height: 100vh;
-        background:
-          radial-gradient(circle at 82% 8%, rgba(255, 77, 141, 0.24), transparent 34rem),
-          radial-gradient(circle at 10% 82%, rgba(45, 230, 176, 0.2), transparent 28rem),
-          linear-gradient(180deg, var(--bg), var(--page));
-        color: var(--text);
-        font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        letter-spacing: 0;
+        background: var(--pink);
+        color: var(--ink);
+        font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-weight: 500;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
       }
 
       a {
-        color: inherit;
+        color: var(--ink);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+      }
+
+      a:hover {
+        background: var(--pink);
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--ink);
+        outline-offset: 3px;
+        border-radius: 6px;
       }
 
       .shell {
-        width: min(1120px, calc(100% - 36px));
+        max-width: 1120px;
         margin: 0 auto;
-        padding: 28px 0 54px;
+        padding: 20px 16px 0;
       }
 
+      /* Top bar */
       .nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 18px;
-        padding: 14px 0 34px;
+        flex-wrap: wrap;
+        gap: 12px;
       }
 
       .brand {
@@ -76,327 +98,318 @@
         text-decoration: none;
       }
 
-      .brand-mark {
-        width: 42px;
-        height: 42px;
+      .brand:hover {
+        background: none;
+      }
+
+      .brand img {
+        width: 46px;
+        height: 46px;
+        border: 2px solid var(--ink);
+        border-radius: 14px;
         display: block;
-        border-radius: 12px;
-        box-shadow: 0 0 38px rgba(45, 230, 176, 0.2);
-        object-fit: cover;
       }
 
       .wordmark {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 13px;
+        font-size: 24px;
         font-weight: 700;
-        letter-spacing: 3px;
+        letter-spacing: -0.03em;
       }
 
-      .nav-pill {
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        color: var(--muted);
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 1.7px;
-        padding: 10px 13px;
-        text-transform: uppercase;
-        white-space: nowrap;
-      }
-
-      .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.72fr);
-        gap: 24px;
-        align-items: stretch;
-      }
-
-      .hero-main,
-      .summary-card,
-      .policy-card {
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
-        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
-        backdrop-filter: blur(16px);
-      }
-
-      .hero-main {
-        min-height: 390px;
-        padding: clamp(26px, 5vw, 52px);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .hero-main::after {
-        content: "";
-        position: absolute;
-        inset: auto -8% -32% 42%;
-        height: 250px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(45, 230, 176, 0.24), transparent 68%);
-        pointer-events: none;
-      }
-
-      .eyebrow {
+      .pill {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
-        color: var(--soft);
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
+        padding: 7px 14px;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        background: var(--green);
+        font-size: 14px;
+        font-weight: 600;
       }
 
-      .dot {
-        width: 9px;
-        height: 9px;
-        border-radius: 50%;
-        background: var(--accent);
-        box-shadow: 0 0 26px rgba(45, 230, 176, 0.9);
+      /* Hero */
+      .hero {
+        display: grid;
+        gap: 32px;
+        margin: 44px 0 48px;
+        align-items: end;
       }
 
       h1 {
-        max-width: 760px;
-        margin: 28px 0 18px;
-        font-size: clamp(42px, 8vw, 86px);
-        line-height: 0.93;
+        margin: 0 0 18px;
+        font-size: clamp(60px, 13vw, 116px);
+        line-height: 0.92;
+        letter-spacing: -0.05em;
         font-weight: 700;
-        letter-spacing: -1.5px;
       }
 
-      .gradient-text {
-        background: linear-gradient(90deg, var(--accent), var(--cyan), var(--pink));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+      h1 .tint {
+        display: block;
+        color: var(--tint);
       }
 
       .lead {
-        max-width: 740px;
         margin: 0;
-        color: var(--muted);
-        font-size: clamp(17px, 2.4vw, 22px);
-        line-height: 1.55;
+        max-width: 36ch;
+        font-size: 19px;
+        line-height: 1.5;
       }
 
-      .hero-meta {
+      .chips {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        margin-top: 36px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .chip {
-        border: 1px solid rgba(45, 230, 176, 0.26);
-        border-radius: 999px;
-        background: rgba(45, 230, 176, 0.08);
-        color: rgba(242, 243, 247, 0.86);
-        font-family: "JetBrains Mono", monospace;
-        font-size: 12px;
-        font-weight: 700;
-        padding: 9px 11px;
-      }
-
-      .summary-card {
-        padding: 24px;
-      }
-
-      .summary-title {
-        color: var(--soft);
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 2px;
-        margin-bottom: 18px;
-        text-transform: uppercase;
-      }
-
-      .summary-list {
-        display: grid;
-        gap: 12px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .summary-list li {
-        display: grid;
-        grid-template-columns: 24px 1fr;
-        gap: 11px;
-        align-items: start;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.45;
-      }
-
-      .check {
-        display: inline-grid;
-        place-items: center;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background: var(--accent);
-        color: var(--accent-dark);
-        font-family: "JetBrains Mono", monospace;
-        font-size: 13px;
-        font-weight: 700;
-      }
-
-      .content {
-        display: grid;
-        grid-template-columns: 230px minmax(0, 1fr);
-        gap: 24px;
-        align-items: start;
         margin-top: 24px;
       }
 
+      .chip {
+        display: inline-flex;
+        padding: 8px 16px;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .summary {
+        background: var(--green);
+        border: 3px solid var(--ink);
+        border-radius: 26px;
+        box-shadow: 6px 6px 0 var(--ink);
+        padding: 24px 22px;
+        margin-right: 6px;
+      }
+
+      .summary h2 {
+        margin: 0 0 16px;
+        font-size: 24px;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      .summary ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 14px;
+      }
+
+      .summary li {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 12px;
+        align-items: start;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .check {
+        width: 28px;
+        height: 28px;
+        border: 2px solid var(--ink);
+        border-radius: 50%;
+        background: var(--pink);
+        display: grid;
+        place-items: center;
+        margin-top: -1px;
+      }
+
+      .check svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      /* Sections */
+      .content {
+        display: grid;
+        gap: 28px;
+      }
+
       .toc {
-        position: sticky;
-        top: 18px;
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        background: rgba(255, 255, 255, 0.04);
-        padding: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-content: start;
       }
 
       .toc a {
-        display: block;
-        border-radius: 10px;
-        color: var(--muted);
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 1.2px;
-        padding: 11px 10px;
+        display: inline-flex;
+        padding: 7px 14px;
+        border: 2px solid var(--ink);
+        border-radius: 14px;
+        font-size: 15px;
+        font-weight: 600;
         text-decoration: none;
-        text-transform: uppercase;
       }
 
       .toc a:hover {
-        background: rgba(45, 230, 176, 0.08);
-        color: var(--text);
+        background: var(--green);
       }
 
-      .policy-card {
-        padding: clamp(22px, 4vw, 38px);
+      .sections {
+        display: grid;
+        gap: 22px;
+        min-width: 0;
       }
 
-      section + section {
-        border-top: 1px solid var(--line);
-        margin-top: 30px;
-        padding-top: 30px;
+      .card {
+        background: var(--green);
+        border: 2px solid var(--ink);
+        border-radius: 22px;
+        box-shadow: 4px 4px 0 var(--ink);
+        padding: 22px 20px 10px;
+        margin-right: 4px;
+        scroll-margin-top: 20px;
       }
 
-      h2 {
-        margin: 0 0 14px;
-        color: var(--text);
-        font-size: clamp(24px, 3.5vw, 34px);
-        line-height: 1.12;
+      .number {
+        display: inline-flex;
+        padding: 2px 11px;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        background: var(--pink);
+        font-size: 13px;
         font-weight: 700;
+        letter-spacing: 0.02em;
       }
 
-      p,
-      li {
-        color: var(--muted);
-        font-size: 16px;
-        line-height: 1.72;
+      .card h2 {
+        margin: 12px 0 10px;
+        font-size: 25px;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
       }
 
-      p {
+      .card p,
+      .card ul {
         margin: 0 0 14px;
+        max-width: 68ch;
+        font-size: 17px;
+        line-height: 1.6;
       }
 
-      ul {
-        margin: 12px 0 0;
-        padding-left: 20px;
+      .card ul {
+        padding-left: 22px;
+      }
+
+      .card li {
+        margin: 8px 0;
+      }
+
+      .card li::marker {
+        color: var(--ink);
       }
 
       strong {
-        color: var(--text);
         font-weight: 700;
       }
 
-      .callout {
-        border: 1px solid rgba(45, 230, 176, 0.24);
-        border-radius: 14px;
-        background: rgba(45, 230, 176, 0.075);
-        margin-top: 18px;
-        padding: 16px;
+      code {
+        font-family: inherit;
+        font-weight: 600;
+        font-size: 0.92em;
+        background: var(--pink);
+        border: 2px solid var(--ink);
+        border-radius: 8px;
+        padding: 0 6px;
+        overflow-wrap: anywhere;
       }
 
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        margin: 4px 0 16px;
+        padding: 16px 22px;
+        border-radius: 16px;
+        background: var(--ink);
+        color: var(--pink);
+        font-size: 17px;
+        font-weight: 700;
+        text-decoration: none;
+        overflow-wrap: anywhere;
+        text-align: center;
+      }
+
+      .button:hover {
+        background: var(--ink);
+        color: var(--green);
+      }
+
+      /* Footer band with the app icon's sharp sign, cropped at the edge like the store artwork. */
       .footer {
-        display: flex;
-        justify-content: space-between;
-        gap: 18px;
-        border-top: 1px solid var(--line);
-        color: var(--soft);
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 1.2px;
-        margin-top: 30px;
-        padding-top: 24px;
-        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+        margin-top: 56px;
+        min-height: 220px;
       }
 
-      @media (max-width: 820px) {
+      .footer-inner {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 16px 40px;
+        position: relative;
+        z-index: 1;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .footer-inner p {
+        margin: 0 0 4px;
+      }
+
+      .motif {
+        position: absolute;
+        right: -70px;
+        bottom: -90px;
+        width: 300px;
+        height: 300px;
+      }
+
+      @media (min-width: 860px) {
         .shell {
-          width: min(100% - 28px, 680px);
-          padding-top: 18px;
+          padding: 28px 32px 0;
         }
 
-        .nav {
-          align-items: flex-start;
-          padding-bottom: 22px;
+        .hero {
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 48px;
+          margin: 72px 0 72px;
         }
 
-        .hero,
         .content {
-          grid-template-columns: 1fr;
-        }
-
-        .hero-main {
-          min-height: 430px;
-        }
-
-        .toc {
-          position: static;
+          grid-template-columns: 220px 1fr;
+          gap: 40px;
+          align-items: start;
         }
 
         .toc {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .footer {
+          position: sticky;
+          top: 24px;
           flex-direction: column;
-        }
-      }
-
-      @media (max-width: 520px) {
-        .nav {
-          flex-direction: column;
+          flex-wrap: nowrap;
+          align-items: stretch;
         }
 
-        .nav-pill {
-          white-space: normal;
+        .toc a {
+          display: flex;
         }
 
-        .toc {
-          grid-template-columns: 1fr;
+        .card {
+          padding: 28px 30px 14px;
         }
 
-        .chip {
-          width: 100%;
-          text-align: center;
+        .footer-inner {
+          padding: 0 32px 48px;
+        }
+
+        .motif {
+          right: -40px;
+          bottom: -120px;
+          width: 380px;
+          height: 380px;
         }
       }
     </style>
@@ -405,64 +418,67 @@
     <main class="shell">
       <nav class="nav" aria-label="Page">
         <a class="brand" href="#top" aria-label="SongKey Privacy Policy">
-          <img
-            class="brand-mark"
-            src="assets/songkey-app-icon-512.png"
-            width="42"
-            height="42"
-            alt=""
-            aria-hidden="true"
-          />
-          <span class="wordmark">SONGKEY</span>
+          <img src="assets/songkey-app-icon-512.png" width="46" height="46" alt="" aria-hidden="true" />
+          <span class="wordmark">SongKey</span>
         </a>
-        <span class="nav-pill">Privacy Policy · Updated November 2, 2026</span>
+        <span class="pill">Updated November 2, 2026</span>
       </nav>
 
       <header id="top" class="hero">
-        <div class="hero-main">
-          <div>
-            <div class="eyebrow"><span class="dot"></span> Music key and genre finder</div>
-            <h1><span class="gradient-text">Privacy</span> Policy</h1>
-            <p class="lead">
-              SongKey finds a track's genre, mood, key and BPM from audio you
-              record or choose, and works it all out on your phone.
-            </p>
-          </div>
-          <div class="hero-meta" aria-label="Policy highlights">
-            <span class="chip">No account required</span>
-            <span class="chip">Audio never leaves your phone</span>
+        <div>
+          <h1>Privacy <span class="tint">Policy</span></h1>
+          <p class="lead">
+            SongKey finds a track's genre, mood, key and BPM from audio you record or choose, and
+            works it all out on your phone.
+          </p>
+          <div class="chips" aria-label="Policy highlights">
+            <span class="chip">No account needed</span>
             <span class="chip">No ads or tracking</span>
+            <span class="chip">Crash reports you control</span>
           </div>
         </div>
 
-        <aside class="summary-card" aria-label="Short privacy summary">
-          <div class="summary-title">Quick summary</div>
-          <ul class="summary-list">
-            <li><span class="check">✓</span><span>From version 1.2.0, genre, mood, tempo and key are worked out on your phone, and your recordings and files are never uploaded.</span></li>
-            <li><span class="check">✓</span><span>Your recent results stay on your phone.</span></li>
-            <li><span class="check">✓</span><span>Trending charts are the only feature that uses the internet.</span></li>
-            <li><span class="check">✓</span><span>Crash reports help us fix problems, never include audio, file names or results, and can be turned off in the menu.</span></li>
+        <aside class="summary" aria-label="Short privacy summary">
+          <h2>Quick summary</h2>
+          <ul>
+            <li>
+              <span class="check" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2.5 7.5l3 3 6-7" fill="none" stroke="#0b0b0b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+              <span>From version 1.2.0, genre, mood, tempo and key are worked out on your phone, and your recordings and files are never uploaded.</span>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2.5 7.5l3 3 6-7" fill="none" stroke="#0b0b0b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+              <span>Your recent results stay on your phone.</span>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2.5 7.5l3 3 6-7" fill="none" stroke="#0b0b0b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+              <span>Trending charts are the only feature that uses the internet.</span>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2.5 7.5l3 3 6-7" fill="none" stroke="#0b0b0b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+              <span>Crash reports help us fix problems, never include audio, file names or results, and can be turned off in the menu.</span>
+            </li>
           </ul>
         </aside>
       </header>
 
       <div class="content">
-        <aside class="toc" aria-label="Privacy sections">
+        <nav class="toc" aria-label="Privacy sections">
           <a href="#scope">Scope</a>
-          <a href="#audio">Your Audio</a>
-          <a href="#device">On Your Phone</a>
-          <a href="#charts">Trending Charts</a>
-          <a href="#crash">Crash Reports</a>
+          <a href="#audio">Your audio</a>
+          <a href="#device">On your phone</a>
+          <a href="#charts">Trending charts</a>
+          <a href="#crash">Crash reports</a>
           <a href="#permissions">Permissions</a>
           <a href="#sharing">Sharing</a>
-          <a href="#choices">Your Choices</a>
+          <a href="#choices">Your choices</a>
           <a href="#children">Children</a>
           <a href="#contact">Contact</a>
-        </aside>
+        </nav>
 
-        <article class="policy-card">
-          <section id="scope">
-            <h2>1. Scope</h2>
+        <article class="sections">
+          <section id="scope" class="card">
+            <span class="number">01</span>
+            <h2>Scope</h2>
             <p>
               This policy covers the SongKey app (formerly GenreKey) for Android (package
               <code>com.songkeyfinder.app</code>) from version 1.2.0, and the SongKey chart server
@@ -476,8 +492,9 @@
             </p>
           </section>
 
-          <section id="audio">
-            <h2>2. Your Audio Stays on Your Phone</h2>
+          <section id="audio" class="card">
+            <span class="number">02</span>
+            <h2>Your audio stays on your phone</h2>
             <p>
               SongKey works out a song's genre, mood, tempo (BPM), key, time signature and energy
               entirely on your phone. It never uploads your recordings, the files you choose, their
@@ -492,16 +509,18 @@
             </ul>
           </section>
 
-          <section id="device">
-            <h2>3. What Stays on Your Phone</h2>
+          <section id="device" class="card">
+            <span class="number">03</span>
+            <h2>What stays on your phone</h2>
             <p>
               Your recent results stay on your phone so you can open them again. Clearing the app's
               data or uninstalling the app removes them.
             </p>
           </section>
 
-          <section id="charts">
-            <h2>4. Trending Charts</h2>
+          <section id="charts" class="card">
+            <span class="number">04</span>
+            <h2>Trending charts</h2>
             <p>
               Trending is the only feature that uses the internet. When you open it, the app asks
               SongKey's chart server for the charts of the country you choose. Like every internet
@@ -514,22 +533,24 @@
             </p>
           </section>
 
-          <section id="crash">
-            <h2>5. Crash Reports</h2>
+          <section id="crash" class="card">
+            <span class="number">05</span>
+            <h2>Crash reports</h2>
             <p>
               When SongKey crashes or hits an error, it sends a crash report to a crash-reporting
-              service that works for us, so we can find and fix the problem. A report holds the error and where in
-              the app it happened, the app version, your phone model, system version and free memory
-              and storage, and a random ID for this installation. It never includes your name,
-              contact details, audio, recordings, file names or results. The service deletes reports
-              automatically after 90 days, protects them under its data processing terms and uses them
-              only to provide this service to us. You can turn crash reports off at any time in the
-              app's menu, which also deletes any reports not yet sent.
+              service that works for us, so we can find and fix the problem. A report holds the error
+              and where in the app it happened, the app version, your phone model, system version and
+              free memory and storage, and a random ID for this installation. It never includes your
+              name, contact details, audio, recordings, file names or results. The service deletes
+              reports automatically after 90 days, protects them under its data processing terms and
+              uses them only to provide this service to us. You can turn crash reports off at any
+              time in the app's menu, which also deletes any reports not yet sent.
             </p>
           </section>
 
-          <section id="permissions">
-            <h2>6. Permissions</h2>
+          <section id="permissions" class="card">
+            <span class="number">06</span>
+            <h2>Permissions</h2>
             <ul>
               <li><strong>Microphone:</strong> only for live listening, as described above.</li>
               <li><strong>Files:</strong> the system file picker; SongKey sees only the file you pick.</li>
@@ -538,18 +559,20 @@
             <p>SongKey sends no notifications and does not run in the background.</p>
           </section>
 
-          <section id="sharing">
-            <h2>7. Sharing</h2>
+          <section id="sharing" class="card">
+            <span class="number">07</span>
+            <h2>Sharing</h2>
             <p>
               SongKey has no ads, no analytics and no tracking, and does not sell or share personal
               data. The only services involved are SongKey's chart server, the chart provider for
-              artwork and the crash-reporting service. We may disclose
-              information if the law requires it.
+              artwork and the crash-reporting service. We may disclose information if the law
+              requires it.
             </p>
           </section>
 
-          <section id="choices">
-            <h2>8. Your Choices</h2>
+          <section id="choices" class="card">
+            <span class="number">08</span>
+            <h2>Your choices</h2>
             <ul>
               <li>SongKey works without an internet connection; only Trending needs one.</li>
               <li>You can deny or remove microphone access in your phone's settings and still analyse files.</li>
@@ -560,29 +583,42 @@
             </ul>
           </section>
 
-          <section id="children">
-            <h2>9. Children</h2>
+          <section id="children" class="card">
+            <span class="number">09</span>
+            <h2>Children</h2>
             <p>
               SongKey is not designed for children under 13. Only record or choose audio you have
               the right to use.
             </p>
           </section>
 
-          <section id="contact">
-            <h2>10. Changes and Contact</h2>
+          <section id="contact" class="card">
+            <span class="number">10</span>
+            <h2>Changes and contact</h2>
             <p>
               We update this policy when SongKey changes and show the date at the top. For privacy
-              questions, contact:
-              <strong><a href="mailto:articlespinnerai@gmail.com">articlespinnerai@gmail.com</a></strong>.
+              questions, contact us:
             </p>
+            <a class="button" href="mailto:articlespinnerai@gmail.com">articlespinnerai@gmail.com</a>
           </section>
-
-          <footer class="footer">
-            <span>SongKey Privacy Policy</span>
-            <span>Effective November 1, 2026</span>
-          </footer>
         </article>
       </div>
     </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>SongKey Privacy Policy</p>
+        <p>Effective November 1, 2026</p>
+      </div>
+      <svg class="motif" viewBox="0 0 300 300" aria-hidden="true">
+        <circle cx="150" cy="150" r="144" fill="#42e425" stroke="#0b0b0b" stroke-width="10" />
+        <g fill="#0b0b0b">
+          <rect x="108" y="56" width="26" height="188" rx="10" />
+          <rect x="166" y="48" width="26" height="188" rx="10" />
+          <rect x="70" y="104" width="160" height="26" rx="10" transform="rotate(-12 150 117)" />
+          <rect x="70" y="170" width="160" height="26" rx="10" transform="rotate(-12 150 183)" />
+        </g>
+      </svg>
+    </footer>
   </body>
 </html>
